@@ -1,7 +1,7 @@
 # DN 5.0 Deep Skilling - Java FSE React
 
 ## Candidate Details
-- **Name**: Saisameer Bellary
+- **Name**: Saisameer Pamidighantam
 - **Program**: Cognizant Digital Nurture 5.0
 - **Track**: Java FSE React
 - **Institute**: SRM Institute of Science and Technology
