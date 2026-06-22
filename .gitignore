@@ -1,0 +1,16 @@
+# Compiled Java files
+*.class
+
+# Maven
+target/
+*.jar
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
