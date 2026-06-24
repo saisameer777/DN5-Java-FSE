@@ -18,7 +18,7 @@
 | Week 7 | Git, DevOps, Docker, Agile, Cloud, GenAI |
 
 ## Mandatory Exercises Tracker
-- [ ] Module 1 - Singleton Pattern
+- [x ] Module 1 - Singleton Pattern
 - [ ] Module 1 - Factory Method Pattern
 - [ ] Module 2 - E-commerce Search Function
 - [ ] Module 2 - Financial Forecasting
