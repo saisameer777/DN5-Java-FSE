@@ -1,61 +1,27 @@
--- ============================================================
--- Exercise 1: Control Structures
--- Module 3 - PL/SQL Programming
--- DN 5.0 Deep Skilling - Java FSE React
--- ============================================================
+-- Scenario 1: Apply 1% discount on loan interest rate for customers above 60 years old
 
--- SCHEMA (run once before executing the exercises)
--- CREATE TABLE Customers (
---     CustomerID NUMBER PRIMARY KEY,
---     Name VARCHAR2(100),
---     DOB DATE,
---     Balance NUMBER,
---     LastModified DATE
--- );
--- CREATE TABLE Loans (
---     LoanID NUMBER PRIMARY KEY,
---     CustomerID NUMBER,
---     LoanAmount NUMBER,
---     InterestRate NUMBER,
---     StartDate DATE,
---     EndDate DATE,
---     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
--- );
-
--- ============================================================
--- Scenario 1: Apply 1% discount on loan interest rates
---             for customers above 60 years old.
--- ============================================================
 DECLARE
     CURSOR c_customers IS
         SELECT CustomerID, DOB FROM Customers;
     v_age NUMBER;
 BEGIN
     FOR rec IN c_customers LOOP
-        -- Calculate age in years
         v_age := TRUNC(MONTHS_BETWEEN(SYSDATE, rec.DOB) / 12);
-
         IF v_age > 60 THEN
-            -- Apply 1% discount to all loans of this customer
             UPDATE Loans
             SET InterestRate = InterestRate - 1
             WHERE CustomerID = rec.CustomerID
-              AND InterestRate > 1; -- prevent negative rates
-
-            DBMS_OUTPUT.PUT_LINE('Applied 1% discount for CustomerID: '
-                || rec.CustomerID || ' (Age: ' || v_age || ')');
+              AND InterestRate > 1;
+            DBMS_OUTPUT.PUT_LINE('Discount applied for CustomerID: ' || rec.CustomerID || ', Age: ' || v_age);
         END IF;
     END LOOP;
     COMMIT;
-    DBMS_OUTPUT.PUT_LINE('Scenario 1 complete: Loan discount applied.');
+    DBMS_OUTPUT.PUT_LINE('Loan interest discount process completed.');
 END;
 /
 
--- ============================================================
--- Scenario 2: Set IsVIP = TRUE for customers with balance > $10,000
--- NOTE: Add IsVIP column first if not present:
---       ALTER TABLE Customers ADD IsVIP VARCHAR2(5) DEFAULT 'FALSE';
--- ============================================================
+-- Scenario 2: Promote customers to VIP if balance exceeds $10,000
+
 DECLARE
     CURSOR c_customers IS
         SELECT CustomerID, Balance FROM Customers;
@@ -65,9 +31,7 @@ BEGIN
             UPDATE Customers
             SET IsVIP = 'TRUE'
             WHERE CustomerID = rec.CustomerID;
-
-            DBMS_OUTPUT.PUT_LINE('CustomerID ' || rec.CustomerID
-                || ' promoted to VIP. Balance: $' || rec.Balance);
+            DBMS_OUTPUT.PUT_LINE('CustomerID ' || rec.CustomerID || ' marked as VIP.');
         ELSE
             UPDATE Customers
             SET IsVIP = 'FALSE'
@@ -75,13 +39,12 @@ BEGIN
         END IF;
     END LOOP;
     COMMIT;
-    DBMS_OUTPUT.PUT_LINE('Scenario 2 complete: VIP status updated.');
+    DBMS_OUTPUT.PUT_LINE('VIP status update completed.');
 END;
 /
 
--- ============================================================
--- Scenario 3: Send reminders for loans due within the next 30 days
--- ============================================================
+-- Scenario 3: Print reminders for loans due within the next 30 days
+
 DECLARE
     CURSOR c_loans IS
         SELECT l.LoanID, l.CustomerID, l.EndDate, c.Name
@@ -90,12 +53,9 @@ DECLARE
         WHERE l.EndDate BETWEEN SYSDATE AND SYSDATE + 30;
 BEGIN
     FOR rec IN c_loans LOOP
-        DBMS_OUTPUT.PUT_LINE('REMINDER: Dear ' || rec.Name
-            || ' (CustomerID: ' || rec.CustomerID || '), '
-            || 'your LoanID ' || rec.LoanID
-            || ' is due on ' || TO_CHAR(rec.EndDate, 'DD-MON-YYYY')
-            || '. Please ensure timely payment.');
+        DBMS_OUTPUT.PUT_LINE('Reminder: ' || rec.Name || ', your loan (ID: ' || rec.LoanID
+            || ') is due on ' || TO_CHAR(rec.EndDate, 'DD-MON-YYYY') || '. Please pay on time.');
     END LOOP;
-    DBMS_OUTPUT.PUT_LINE('Scenario 3 complete: Reminders sent.');
+    DBMS_OUTPUT.PUT_LINE('Loan reminder process completed.');
 END;
 /

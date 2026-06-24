@@ -5,7 +5,7 @@ public class DocumentFactory {
             case "WORD":  return new WordDocument();
             case "PDF":   return new PdfDocument();
             case "EXCEL": return new ExcelDocument();
-            default: throw new IllegalArgumentException("Unknown document type: " + type);
+            default: throw new IllegalArgumentException("Unknown type: " + type);
         }
     }
 }

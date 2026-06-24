@@ -10,8 +10,6 @@ public class Product {
     }
 
     public String toString() {
-        return "Product{id=" + productId + 
-               ", name='" + productName + 
-               "', category='" + category + "'}";
+        return "Product{id=" + productId + ", name='" + productName + "', category='" + category + "'}";
     }
 }

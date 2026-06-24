@@ -1,6 +1,3 @@
-// Calculator.java
-// Simple class used as the subject for JUnit tests (Exercise 1 & 3)
-
 public class Calculator {
 
     public int add(int a, int b) {

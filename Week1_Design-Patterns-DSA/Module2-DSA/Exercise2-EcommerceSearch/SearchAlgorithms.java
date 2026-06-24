@@ -1,6 +1,5 @@
 public class SearchAlgorithms {
 
-    // Linear Search - O(n) - works on unsorted array
     public static Product linearSearch(Product[] products, int targetId) {
         for (Product p : products) {
             if (p.productId == targetId) {
@@ -10,7 +9,6 @@ public class SearchAlgorithms {
         return null;
     }
 
-    // Binary Search - O(log n) - array MUST be sorted by productId
     public static Product binarySearch(Product[] products, int targetId) {
         int left = 0;
         int right = products.length - 1;

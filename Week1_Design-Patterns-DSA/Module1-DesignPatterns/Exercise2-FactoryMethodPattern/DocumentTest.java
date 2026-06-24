@@ -1,7 +1,5 @@
 public class DocumentTest {
     public static void main(String[] args) {
-
-        // Factory creates the right object - caller doesn't use 'new'
         Document word  = DocumentFactory.createDocument("WORD");
         Document pdf   = DocumentFactory.createDocument("PDF");
         Document excel = DocumentFactory.createDocument("EXCEL");

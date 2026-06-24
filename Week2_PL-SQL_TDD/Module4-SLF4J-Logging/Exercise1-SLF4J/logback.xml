@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- logback.xml - SLF4J Logback Configuration -->
-<!-- Place this file in src/main/resources/ -->
 <configuration>
 
-    <!-- Console Appender: prints logs to terminal -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- File Appender: saves logs to app.log -->
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>app.log</file>
         <encoder>
@@ -18,7 +14,6 @@
         </encoder>
     </appender>
 
-    <!-- Root logger: show DEBUG and above on console, INFO and above in file -->
     <root level="DEBUG">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
