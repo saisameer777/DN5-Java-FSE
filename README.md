@@ -37,10 +37,10 @@
 - [x] Module 4 - SLF4J Logging
 
 ### Week 3 - Spring Core & Spring Data JPA
-- [ ] Module 5 - Basic Spring Application
-- [ ] Module 5 - Dependency Injection
-- [ ] Module 5 - Maven Project
-- [ ] Module 6 - Spring Data JPA Quick Example
+- [x] Module 5 - Basic Spring Application
+- [x] Module 5 - Dependency Injection
+- [x] Module 5 - Maven Project
+- [x] Module 6 - Spring Data JPA Quick Example
 
 ### Week 4 - Spring REST
 - [ ] Module 7 - Spring Web Project
