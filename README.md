@@ -52,7 +52,7 @@
 - [ ] Module 8 - Microservices (Account & Loan)
 - [ ] Module 9 - React HOL 1-4
 
-### Week 6 - React (continued)
+### Week 6 - React 
 - [ ] Module 9 - React HOL 5, 9-13
 
 ### Week 7 - Platforms & GenAI
