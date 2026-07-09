@@ -43,10 +43,10 @@
 - [x] Module 6 - Spring Data JPA Quick Example
 
 ### Week 4 - Spring REST
-- [ ] Module 7 - Spring Web Project
-- [ ] Module 7 - Hello World REST
-- [ ] Module 7 - Country Web Service
-- [ ] Module 7 - JWT Authentication
+- [x] Module 7 - Spring Web Project
+- [x] Module 7 - Hello World REST
+- [x] Module 7 - Country Web Service
+- [x] Module 7 - JWT Authentication
 
 ### Week 5 - Microservices & React
 - [ ] Module 8 - Microservices (Account & Loan)
