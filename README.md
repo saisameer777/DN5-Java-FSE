@@ -49,8 +49,8 @@
 - [x] Module 7 - JWT Authentication
 
 ### Week 5 - Microservices & React
-- [ ] Module 8 - Microservices (Account & Loan)
-- [ ] Module 9 - React HOL 1-4
+- [x] Module 8 - Microservices (Account & Loan)
+- [x] Module 9 - React HOL 1-4
 
 ### Week 6 - React 
 - [ ] Module 9 - React HOL 5, 9-13
