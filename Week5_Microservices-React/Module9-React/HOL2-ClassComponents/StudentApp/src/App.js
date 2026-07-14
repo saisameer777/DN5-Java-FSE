@@ -1,7 +1,7 @@
 import React from 'react';
-import Home from './Components/Home';
-import About from './Components/About';
-import Contact from './Components/Contact';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
 
 function App() {
   return (

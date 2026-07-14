@@ -1,5 +1,5 @@
 import React from 'react';
-import CalculateScore from './Components/CalculateScore';
+import CalculateScore from './CalculateScore';
 
 function App() {
   return (
