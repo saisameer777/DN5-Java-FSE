@@ -53,7 +53,7 @@
 - [x] Module 9 - React HOL 1-4
 
 ### Week 6 - React 
-- [ ] Module 9 - React HOL 5, 9-13
+- [x] Module 9 - React HOL 5, 9-13
 
 ### Week 7 - Platforms & GenAI
 - [ ] Module 11 - Git HOL 1-5
